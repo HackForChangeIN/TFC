@@ -1,0 +1,55 @@
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Member List</title>
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    <ul class="navbar-nav ml-auto">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="{% url 'dashboard' %}" >Home </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{% url 'team_member' %}" >Members</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{% url 'volunteerlist' %}">Volunteers</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Donations</a>
+                                </li>
+                                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+                              </ul>
+                    </nav>
+                    
+            {% block body %}
+            
+            <h3>{{volunteer.name}}</h3>
+            <h4>{{volunteer.email}}</h4>
+            <h4>{{volunteer.ontact_number}}</h4>
+            <h4>{{volunteer.dob}}</h4>
+            <h4>{{volunteer.gender}}</h4>
+            <h4>{{volunteer.highest_education}}</h4>
+            <h4>{{volunteer.availability}}</h4>
+            <h4>{{volunteer.current_occupation}}</h4>
+            <h4>{{volunteer.years_of_experience}}</h4>
+            <h4>{{volunteer.profession}}</h4>
+            <h4>{{volunteer.areaofexpertise}}</h4>
+            
+            {% for item in screen_obj%}
+            <h4>Screening Status:{{item.status}}</h4>
+            <h4>Screening Score:{{item.screening_result}}%</h4>
+            
+            {%endfor%}
+            {%endblock%}
+            </body>
+            </html>

@@ -1,0 +1,292 @@
+---
+- model: ScreeningApp.Expertise_Area
+  pk: 1
+  fields:
+    area_of_expertise: Engineering
+    category_of_expertise: Python
+    
+- model: ScreeningApp.Expertise
+  pk: 1
+  fields:
+    expertise: ORM
+    category_of_expertise: 1
+- model: ScreeningApp.Expertise
+  pk: 2
+  fields:
+    expertise: Basic
+    category_of_expertise: 1
+- model: ScreeningApp.Expertise
+  pk: 3
+  fields:
+    expertise: Exception
+    category_of_expertise: 1
+- model: ScreeningApp.Expertise
+  pk: 4
+  fields:
+    expertise: Data Structure
+    category_of_expertise: 1
+- model: ScreeningApp.Expertise
+  pk: 5
+  fields:
+    expertise: Function
+    category_of_expertise: 1
+- model: ScreeningApp.Expertise
+  pk: 6
+  fields:
+    expertise: OOPS
+    category_of_expertise: 1
+- model: ScreeningApp.Expertise
+  pk: 7
+  fields:
+    expertise: String
+    category_of_expertise: 1
+- model: ScreeningApp.Question
+  pk: 1
+  fields:
+    question: What is ORM ?
+    qtype: multiple choice
+    option_1: Object Relation Manager
+    option_2: Object Relation Master
+    option_3: Object Relation Management
+    option_4: Object Relation Mapper
+    answer: option_4
+    category_of_expertise: 1
+    expertise: 1
+- model: ScreeningApp.Question
+  pk: 2
+  fields:
+    question: What is pk in django ?
+    qtype: multiple choice
+    option_1: Public Key
+    option_2: Private Key
+    option_3: Primary Key
+    option_4: Personal Key
+    answer: option_3
+    category_of_expertise: 1
+    expertise: 1
+- model: ScreeningApp.Question
+  pk: 3
+  fields:
+    question: 'How can we check whether the object is instance of class or not. Let
+      us consider an object O which is instance of class B. '
+    qtype: multiple choice
+    option_1: B.isinstance(O)
+    option_2: O.isinstance(B)
+    option_3: isinstance(O,B)
+    option_4: isinstance(B,O)
+    answer: option_3
+    category_of_expertise: 1
+    expertise: 6
+- model: ScreeningApp.Question
+  pk: 4
+  fields:
+    question: 'Which of the following is more accurate for the following declaration? 
+    x = Circle() '
+    qtype: multiple choice
+    option_1: Now you can assign int value to x.
+    option_2: x contains a reference to a Circle object.
+    option_3: x actually contains an object of type Circle
+    option_4: x contains an int value.
+    answer: option_2
+    category_of_expertise: 1
+    expertise: 6
+- model: ScreeningApp.Question
+  pk: 5
+  fields:
+    question: 'Which among them is correct(s) about Recursive Function? '
+    qtype: multiple choice
+    option_1: They are much faster than the normal functions.
+    option_2: They take more space then the non-recursive functions
+    option_3: They can always be replaced by non-recursive functions.
+    option_4: Using recursive functions however also gives a natural and straight
+      forward simple solution for the program.
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 5
+- model: ScreeningApp.Question
+  pk: 6
+  fields:
+    question: 'Which function can be used on the file to display a dialog for saving
+      a file? '
+    qtype: multiple choice
+    option_1: " Filename = savefilename()"
+    option_2: " Filename = asksavefilename()"
+    option_3: " Fielname = asksaveasfilename()"
+    option_4: No such option in python.
+    answer: option_3
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 7
+  fields:
+    question: 'Which is the special symbol used in python to add comments? '
+    qtype: multiple choice
+    option_1: "$"
+    option_2: " #"
+    option_3: "//"
+    option_4: "/* */"
+    answer: option_2
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 8
+  fields:
+    question: 'How will you open a file for reading as a text file? '
+    qtype: multiple choice
+    option_1: open('file.txt')
+    option_2: open('file.txt', r’)
+    option_3: open('file.txt', w’)
+    option_4: open('file.txt', 'b’)
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 9
+  fields:
+    question: 'Suppose you have two sets s1 = {1, 2, 3} and s2 = {3, 4, 5}. Which
+      of the following statements give us their union? '
+    qtype: multiple choice
+    option_1: s1.union({3, 4, 5})
+    option_2: s1 | {3, 4, 5}
+    option_3: s1.union([3, 4, 5])
+    option_4: s1 | [3, 4, 5]
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 10
+  fields:
+    question: 'What is the output of the following?print(''*'', ''abcdef''.center(7),
+      ''*'') '
+    qtype: multiple choice
+    option_1: "* abcdef *"
+    option_2: "* abcdef *"
+    option_3: "*abcdef *"
+    option_4: "* abcdef*"
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 11
+  fields:
+    question: " What is the output of the following?print('Hello {1} and {0}'.format('bin',
+      'foo')) "
+    qtype: multiple choice
+    option_1: Hello foo and bin
+    option_2: Hello bin and foo
+    option_3: " Error"
+    option_4: " None of the mentioned"
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 12
+  fields:
+    question: " What is the output of the following?print('The sum of {0} and {1}
+      is {2}'.format(2, 10, 12)) "
+    qtype: multiple choice
+    option_1: The sum of 2 and 10 is 12
+    option_2: Error
+    option_3: " The sum of 0 and 1 is 2"
+    option_4: " None of the mentioned"
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 13
+  fields:
+    question: " Which of the following statements is used to create an empty set? "
+    qtype: multiple choice
+    option_1: "{}"
+    option_2: "[]"
+    option_3: set()
+    option_4: " ()"
+    answer: option_4
+    category_of_expertise: 1
+    expertise: 4
+- model: ScreeningApp.Question
+  pk: 14
+  fields:
+    question: " Which of the following lines of code will result in an error? "
+    qtype: Multiple Choice
+    option_1: s={abs}
+    option_2: s={4, ‘abc’, (1,2)}
+    option_3: s={2, 2.2, 3, ‘xyz’}
+    option_4: " s={san}"
+    answer: option_4
+    category_of_expertise: 1
+    expertise: 4
+- model: ScreeningApp.Question
+  pk: 15
+  fields:
+    question: " What is the output of the line of code shown below, if s1= {1, 2,
+      3}? s1.issubset(s1) "
+    qtype: multiple choice
+    option_1: 'True'
+    option_2: Error
+    option_3: No output
+    option_4: " False"
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 4
+- model: ScreeningApp.Question
+  pk: 16
+  fields:
+    question: Select the reserved keyword in python
+    qtype: multiple choice
+    option_1: Else
+    option_2: import
+    option_3: raise
+    option_4: " All of these"
+    answer: option_4
+    category_of_expertise: 1
+    expertise: 4
+- model: ScreeningApp.Question
+  pk: 17
+  fields:
+    question: Which keyword is used to define methods in Python?
+    qtype: multiple choice
+    option_1: fun
+    option_2: def
+    option_3: function
+    option_4: " method"
+    answer: option_2
+    category_of_expertise: 1
+    expertise: 2
+- model: ScreeningApp.Question
+  pk: 18
+  fields:
+    question: " What is setattr() used for?"
+    qtype: multiple choice
+    option_1: To access the attribute of the object
+    option_2: To set an attribute
+    option_3: " To check if an attribute exists or not"
+    option_4: " To delete an attribute"
+    answer: option_2
+    category_of_expertise: 1
+    expertise: 6
+- model: ScreeningApp.Question
+  pk: 19
+  fields:
+    question: What are the methods which begin and end with two underscore characters
+      called?
+    qtype: multiple choice
+    option_1: Special methods
+    option_2: In-built methods
+    option_3: " User-defined methods"
+    option_4: Additional methods
+    answer: option_1
+    category_of_expertise: 1
+    expertise: 6
+- model: ScreeningApp.Question
+  pk: 20
+  fields:
+    question: What is the return type of id()
+    qtype: multiple choice
+    option_1: float
+    option_2: int
+    option_3: " dict"
+    option_4: bool
+    answer: option_2
+    category_of_expertise: 1
+    expertise: 2

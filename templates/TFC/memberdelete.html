@@ -1,0 +1,43 @@
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Member Update</title>
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    </nav>
+        {% block body %}
+        {% if messages %}
+                    {% for msg in messages %}
+                         <div class="alert alert-info alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{msg.message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+                    
+                    <form method="post" >
+                            {%csrf_token%}
+                            <h4>Are you want to delete the member {{member.member_name}} ?</h4>
+                            <input type="submit" class="btn btn-success" value="Yes">
+                            <a href="{% url 'team_member' %}" class="btn btn-danger">No</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+           
+            {%endblock%}
+    </body>
+</html>

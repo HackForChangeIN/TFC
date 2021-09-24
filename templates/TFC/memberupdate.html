@@ -1,0 +1,44 @@
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Member Update</title>
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    </nav>
+        {% block body %}
+        {% if messages %}
+                    {% for msg in messages %}
+                         <div class="alert alert-info alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{msg.message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+                    
+                    <form method="post" >
+                            {%csrf_token%}
+                            <label for="id_member_name">Member name:</label><input type="text" name="member_name" maxlength="500" required id="id_member_name" value="{{member.member_name}}"><br>
+                            <label for="id_member_email">Member email:</label><input type="email" name="member_email" maxlength="254" required id="id_member_email" value="{{member.member_email}}"><br>
+                            <label for="id_member_phone_number">Member phone number:</label><input type="text" name="member_phone_number" maxlength="20" required id="id_member_phone_number" value="{{member.member_phone_number}}"><br>
+                            <input type="submit" class="btn btn-success" value="Update">
+                    </form>
+                </div>
+            </div>
+        </div>
+           
+            {%endblock%}
+    </body>
+</html>

@@ -1,0 +1,58 @@
+
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Member List</title>
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    <ul class="navbar-nav ml-auto">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="dashboard" >Home</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="members" >Members</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="volunteers">Volunteers</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Donations</a>
+                                </li>
+                                <a href="logout" class="btn btn-primary">Logout</a>
+                              </ul>
+                    </nav>
+            {% block body %}
+            {% if messages %}
+                    {% for msg in messages %}
+                         <div class="alert alert-info alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{msg.message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            
+            <a href="addmember" class="btn btn-success" style="float:right;">Add New Member</a>
+            {% for member in org.team_member_set.all %}
+            <div>
+                <h3>{{member.member_name}}</h3>
+                <a href="memberupdate/{{member.member_id}}" class="btn btn-primary">Edit</a>
+                <a href="memberdelete/{{member.member_id}}" class="btn btn-danger">Delete</a>
+                
+                <br>
+
+            </div>
+            {% endfor%}
+            
+            {%endblock%}
+    </body>
+    </html>

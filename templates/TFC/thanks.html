@@ -1,0 +1,23 @@
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    </nav>
+            {% block body %}
+            <h3>Thank you </h3>
+            {%endblock%}
+            </body>
+            </html>

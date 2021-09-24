@@ -1,0 +1,10 @@
+<html>
+<body>
+
+{% for expertise in expertises %}
+<input type="checkbox" name="area_of_expertise" value="{{expertise.pk}}" id="id_area_of_expertise">
+<label for ="">{{expertise.expertise }} </label>
+{%endfor%}
+
+</body>
+</html>

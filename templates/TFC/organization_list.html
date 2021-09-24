@@ -1,0 +1,32 @@
+
+{% include 'base.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Organizations List</title>
+    </head>
+
+    <body>
+            {% block body %}
+            {% if messages %}
+                        {% for msg in messages %}
+                             <div class="alert alert-info alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {{msg.message}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+            {% for org in organization %}
+            <div>
+                <h3><a href="http://{{org.subdomain}}.staging.forchange.in/">{{org.name}}</a>
+                <a href="http://{{org.subdomain}}.staging.forchange.in/volunteer" class="btn btn-secondary" style="margin-left: 30px;">Signup As A Volunteer</a>
+                <a href="http://{{org.subdomain}}.staging.forchange.in/donate" class="btn btn-secondary" style="margin-left: 30px;">Donate</a></h3>
+                <h4>{{org.website}}</h4>
+                <br>
+
+            </div>
+            {% endfor%}
+            {%endblock%}
+    </body>
+    </html>

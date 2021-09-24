@@ -1,0 +1,26 @@
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+            </nav>
+            <div>
+                <p> Dear {{name}}, </p>
+                <p>You have been invited  by {{org.name}} to attend the screening test.Please click on the below link to take the test.</p>
+                http://www.{{subdomain}}.staging.forchange.in:8000/screenings/{{screeninguuid}}
+            </div>
+    </body>
+</html>
+                

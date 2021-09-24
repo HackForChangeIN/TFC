@@ -1,0 +1,63 @@
+
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Member List</title>
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    <ul class="navbar-nav ml-auto">
+                                <li class="nav-item ">
+                                  <a class="nav-link" href="dashboard" >Home</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="members" >Members</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="volunteers">Volunteers</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Donations</a>
+                                </li>
+                                <a href="logout" class="btn btn-primary">Logout</a>
+                              </ul>
+                    </nav>
+            {% block body %}
+            {% if messages %}
+                    {% for msg in messages %}
+                         <div class="alert alert-info alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{msg.message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            
+        
+            <div>
+                {% for volunteer in volunter %}
+                <h3><a href="volunteer-details/{{volunteer.candidate_ptr_id}}">{{volunteer.name}}</a></h3>
+              
+                
+               <!---- <a href="" class="btn btn-primary">Edit</a>
+                <a href="" class="btn btn-danger">Delete</a>--->
+                
+                
+                {% endfor %}
+            </div>
+            
+            {%endblock%}
+          
+              
+            
+          
+    </body>
+    </html>

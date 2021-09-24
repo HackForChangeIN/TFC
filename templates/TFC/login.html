@@ -1,0 +1,52 @@
+{% include 'header.html'%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <!-- Brand/logo -->
+                    {% load static %}
+                    <a  href="#" class="navbar-brand">
+
+                            <img src="{{org.logo.url}}" width="50", height="50">
+                    </a>
+                    </nav>
+        <div>
+            <br>
+            {% if messages %}
+                {% for msg in messages %}
+                     <div class="alert alert-info alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                {{msg.message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form  method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                
+                
+                <button type="submit" class="btn btn-success">Login</button>&nbsp; 
+                <a class="btn btn-primary" href="{% url 'forgotpassword' %}" role="button">Forgot Passowrd</a> 
+                </form>
+         </div>     
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </body>
+        </html>
