@@ -97,6 +97,7 @@ class Home(View):
             return render(request,'TFC/home.html')
         else:
             #subdomain=request.subdomain
+            subdomain = subdomain.replace('dev', '')
             org=Organization.objects.get(subdomain=subdomain)
             return render(request,'TFC/orghome.html',{'org':org})
         
@@ -155,6 +156,7 @@ class PasswordSetView(View):
     
     def get(self,request,auth_token):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         fields=['password','confirm_password']
         form=TeamMemberSignupForm()
@@ -166,6 +168,7 @@ class PasswordSetView(View):
     
     def post(self,request,auth_token):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         
 
@@ -196,11 +199,13 @@ class ForgotPasswordView(View):
     
     def get(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         
         return render(request,"TFC/password_reset.html",{'org':org})
     def post(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
     
         if request.method=='POST':
@@ -228,6 +233,7 @@ class ForgotPasswordView(View):
 class LoginView(View):
     def get(self,request):
        subdomain=subdomaincheck(request)
+       subdomain = subdomain.replace('dev', '')
        org=Organization.objects.get(subdomain=subdomain)
        form=LoginForm()
        fields=['member_email','password']
@@ -236,6 +242,7 @@ class LoginView(View):
         form=LoginForm(request.POST)
         if form.is_valid():
             subdomain=subdomaincheck(request)
+            subdomain = subdomain.replace('dev', '')
             org=Organization.objects.get(subdomain=subdomain)
             member_email=form.cleaned_data['member_email']
             password=form.cleaned_data['password']
@@ -257,6 +264,7 @@ class LoginView(View):
 class MemberCreateView(View):
     def get(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         member=request.session['member']
         if member == None:
@@ -268,6 +276,7 @@ class MemberCreateView(View):
         form=MemberCreateForm(request.POST)
         if form.is_valid():
             subdomain=subdomaincheck(request)
+            subdomain = subdomain.replace('dev', '')
             org=Organization.objects.get(subdomain=subdomain)
             member_name = form.cleaned_data['member_name']
             member_email = form.cleaned_data['member_email']
@@ -285,6 +294,7 @@ class MemberCreateView(View):
 class MemberListView(View):
     def get(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         member=request.session['member']
         if member == None:
@@ -294,6 +304,7 @@ class MemberListView(View):
 class MemberUpdate(View):
     def get(self,request,member_id):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         member=request.session['member']
         if member == None:
@@ -312,6 +323,7 @@ class MemberUpdate(View):
 class MemberDelete(View):
     def get(self,request,member_id):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         member=request.session['member']
         if member == None:
@@ -331,6 +343,7 @@ class MemberDelete(View):
 class OrgDashboard(View):
     def get(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         
         member=request.session['member']
@@ -358,6 +371,7 @@ def logout(request):
 class VolunteerCreateView(View):
     def get(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         form=VolunteerForm()
         #print(form)
@@ -385,6 +399,7 @@ class VolunteerCreateView(View):
 class VolunteerList(View):
     def get(self,request):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         member=request.session['member']
         screenings_list=[]
@@ -396,6 +411,7 @@ class VolunteerList(View):
 class VolunteerDetails(View):
     def get(self,request,id):
         subdomain=subdomaincheck(request)
+        subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
         member=request.session['member']
         if member == None:
