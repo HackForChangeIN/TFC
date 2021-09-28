@@ -1,12 +1,12 @@
 virtual_hosts = {
     # Staging env
     "*.staging.forchange.in": "TFC.urls",
-    "staging.toolsforchange.co.in": "TFC.urls",
+    "staging.forchange.in": "TFC.urls",
     "staging.hackforchange.co.in": "HFCCore.urls",
 
     # Production
     "*.forchange.in": "TFC.urls",
-    "www.toolsforchange.co.in": "TFC.urls",
+    "www.forchange.in": "TFC.urls",
     "www.hackforchange.co.in": "HFCCore.urls",
 
     # Local Dev

@@ -347,18 +347,18 @@ class OrgDashboard(View):
         org=Organization.objects.get(subdomain=subdomain)
         
         member=request.session['member']
-        print(member)
-        member=Team_Member.objects.get(member_id=member)
-        organization=member.organization.name
-        print(member.organization.name)
-        print(org.name)
-        
-        if org.name == member.organization.name:
-            return render(request,'TFC/orgdashboard.html',{'org':org})
-            
-            
-        else:
+        if member == None:
             return redirect('login')
+        else:
+            print(member)
+            member=Team_Member.objects.get(member_id=member)
+            organization=member.organization.name
+            print(member.organization.name)
+            print(org.name)
+            if org.name == member.organization.name:
+                return render(request,'TFC/orgdashboard.html',{'org':org})
+            else:
+                return redirect('login')
             
             
 
@@ -373,9 +373,12 @@ class VolunteerCreateView(View):
         subdomain=subdomaincheck(request)
         subdomain = subdomain.replace('dev', '')
         org=Organization.objects.get(subdomain=subdomain)
-        form=VolunteerForm()
-        #print(form)
-        return render(request,'TFC/volunteer_signup.html',{'form':form,'org':org})
+        member=request.session['member']
+        if member == None:
+            return redirect('login')
+        else:
+            form=VolunteerForm()
+            return render(request,'TFC/volunteer_signup.html',{'form':form,'org':org})
     def post(self,request):
         form=VolunteerForm(request.POST)
         print(request.POST)
