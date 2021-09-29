@@ -2,7 +2,7 @@ Tools For Change (TFC)
 ------------------------------------------------------------------------------------------------------
 
 # Summary
-    TFC in a generic application, which can be used by any organization (for-profit or non-profit) to engage the community and also raise money for their cause. This becomes a placeholder for adding any common tools that can be used by organizations like CTSC.
+TFC in a generic application, which can be used by any organization (for-profit or non-profit) to engage the community and also raise money for their cause. This becomes a placeholder for adding any common tools that can be used by organizations like CTSC.
 
 # Goal(s)
 	- A way for orgnizations to seek volunteers and screen them
