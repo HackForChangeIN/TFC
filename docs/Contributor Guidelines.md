@@ -37,7 +37,7 @@
   ``` 
   dev.forchange.in:8000  
   ```  
-  12. To populate the intial data use the followwing commands  
+  12. To populate the intial data use the following commands  
   ```  
   ```  
   13. Make the appropriate changes for the issue you are trying to address or the feature that you want to add.  
@@ -58,7 +58,7 @@
   ```  
   git push origin branch-name-here  
   ```    
-  18. Submit a pull request to the upstream repository.  
+  18. Submit a pull request to the **contrib branch** of the repository.  
   19.  Title the pull request with a short description of the changes made and the issue or bug number associated with your change. For example, you can title an issue like so "Added more log outputting to resolve #252".  
   20. In the description of the pull request, explain the changes that you made, any issues you think exist with the pull request you made, and any questions you have for the maintainer.  
   21. Wait for the pull request to be reviewed by a maintainer.  
