@@ -21,25 +21,28 @@
   ```  
   127.0.0.1	dev.forchange.in  
   ```  
-  8. Apply migration by using the following commands  
+  8. To run the project locally  
+      set Debug=True in settings.py      
+      create a file name is to local_settings.py and save it along with settings.py  
+    Add the email credentials to local_settings.py to use the email services  
+    [How to set up  sending email services](https://www.geeksforgeeks.org/setup-sending-email-in-django-project/)
+
+  9. Apply migration by using the following commands  
   ```  
   python manage.py migrate  
   ```  
-  9. create superuser for the project by using following commands  
+  10. create superuser for the project by using following commands  
   ```  
   python manage.py createsuperuser  
   ```  
-  10. To run the server locally use the following commands  
+  11. To run the server locally use the following commands  
   ```  
   python manage.py runserver  
   ```  
-  11. To open the project in the browser go to     
+  12. To open the project in the browser go to     
   ``` 
   dev.forchange.in:8000  
-  ```  
-  12. To populate the intial data use the following commands  
-  ```  
-  ```  
+  ```   
   13. Make the appropriate changes for the issue you are trying to address or the feature that you want to add.  
   14. Create a new branch for your fix using  
   ```   
