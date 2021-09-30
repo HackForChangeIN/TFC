@@ -40,7 +40,7 @@ class Organization(models.Model):
     name = models.CharField(max_length = 500)
     website = models.URLField()
     partner_desc = models.TextField()
-    phone_number = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length = 20)
     email = models.EmailField() 
     logo = models.ImageField()
     address = models.TextField()
@@ -100,4 +100,3 @@ class Volunteer(Candidate):
         else:
             self.level_of_expertise = "Expert"
         super(Volunteer,self).save(*args, **kwargs) 
-
