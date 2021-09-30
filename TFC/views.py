@@ -336,12 +336,8 @@ class VolunteerCreateView(View):
         subdomain = subdomaincheck(request)
         subdomain = subdomain.replace('dev', '')
         org = Organization.objects.get(subdomain=subdomain)
-        member = request.session['member']
-        if member == None:
-            return redirect('login')
-        else:
-            form = VolunteerForm()
-            return render(request,'TFC/volunteer_signup.html',{'form':form,'org':org})
+        form = VolunteerForm()
+        return render(request,'TFC/volunteer_signup.html',{'form':form,'org':org})
     def post(self,request):
         form = VolunteerForm(request.POST)
         print(request.POST)
