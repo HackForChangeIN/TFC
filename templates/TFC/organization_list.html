@@ -19,8 +19,8 @@
                     {% endif %}
             {% for org in organization %}
             <div>
-                <h3><a href="http://{{org.subdomain}}.dev.forchange.in:8000">{{org.name}}</a>
-                <a href="http://{{org.subdomain}}.dev.forchange.in:8000/volunteer" class="btn btn-secondary" style="margin-left: 30px;">Signup As A Volunteer</a>
+                <h3><a href="http://{{org.subdomain}}.{{WEB_URL}}" >{{org.name}}</a>
+                <a href="http://{{org.subdomain}}.{{WEB_URL}}/volunteer " class="btn btn-secondary" style="margin-left: 30px;">Signup As A Volunteer</a>
                
                 <h4>{{org.website}}</h4>
                 <br>

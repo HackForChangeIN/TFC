@@ -23,6 +23,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 import uuid 
 from django.core.mail import send_mail,EmailMessage
+from django.conf import settings
   
 
 def subdomaincheck(request):
@@ -136,9 +137,10 @@ class OrganizationCreateView(View):
 class OrganizationListView(ListView):
     def get(self,request):
          subdomain = subdomaincheck(request)
+         WEB_URL = settings.WEB_URL
          if subdomain == None  or subdomain =="" or subdomain == "dev" :
              organization = Organization.objects.all()
-             return render(request,'TFC/organization_list.html',{'organization':organization})
+             return render(request,'TFC/organization_list.html',{'organization':organization,'WEB_URL':WEB_URL})
 
 class PasswordSetView(View):
     form_class = TeamMemberSignupForm()
